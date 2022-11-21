@@ -9,8 +9,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -39,11 +39,21 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BirthdayGreetingWithText(message: String, from: String) {
     Column {
-        Text(text = message,
+        Text(
+            text = message,
             fontSize = 36.sp,
-            modifier = Modifier.padding(10.dp),
-            color = Color.White)
-        Text(text = from, fontSize = 24.sp, modifier = Modifier.padding(5.dp))
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentWidth(Alignment.Start)
+                .padding(start = 16.dp, top = 16.dp)
+        )
+        Text(
+            text = from, fontSize = 24.sp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentWidth(Alignment.End)
+                .padding(start = 16.dp, end = 16.dp)
+        )
     }
 }
 
