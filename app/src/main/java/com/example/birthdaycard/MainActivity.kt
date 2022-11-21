@@ -27,8 +27,8 @@ class MainActivity : ComponentActivity() {
                 Surface(modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background) {
                     BirthdayGreetingWithImage(
-                        message = "Happy Birthday Someone!",
-                        from = "- from Ilyha"
+                        message = getString(R.string.happy_birthday_text),
+                        from = getString(R.string.signature_text)
                     )
                 }
             }
@@ -44,14 +44,14 @@ fun BirthdayGreetingWithText(message: String, from: String) {
             fontSize = 36.sp,
             modifier = Modifier
                 .fillMaxWidth()
-                .wrapContentWidth(Alignment.Start)
+                .wrapContentWidth(Alignment.CenterHorizontally)
                 .padding(start = 16.dp, top = 16.dp)
         )
         Text(
             text = from, fontSize = 24.sp,
             modifier = Modifier
                 .fillMaxWidth()
-                .wrapContentWidth(Alignment.End)
+                .wrapContentWidth(Alignment.CenterHorizontally)
                 .padding(start = 16.dp, end = 16.dp)
         )
     }
